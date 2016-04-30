@@ -1,4 +1,4 @@
-# ES6 + Webpack + Mocha Boilerplate
+# ES6 + Webpack + Mocha
 
 Write your project using ES6 + Webpack + Mocha now.
 Just clone this repo and run `npm i`
