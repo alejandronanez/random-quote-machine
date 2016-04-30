@@ -1,0 +1,19 @@
+{
+    "extends": "airbnb",
+    "parser": "babel-eslint",
+    "root": true,
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "globals": {
+        "describe": false,
+        "it": false,
+        "require": false
+    },
+    "rules": {
+        "indent": ["error", 4],
+        "padded-blocks": "off",
+        "comma-dangle": "off"
+    }
+}
