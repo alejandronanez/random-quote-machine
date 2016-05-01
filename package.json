@@ -9,7 +9,8 @@
     "commit": "git-cz",
     "test": "karma start",
     "lint": "eslint ./src/ --ext .js",
-    "precommit": "npm lint && npm test"
+    "precommit": "npm run lint",
+    "prepush": "npm run test"
   },
   "repository": {
     "type": "git",
