@@ -1,6 +1,6 @@
-# ES6 + Webpack + Mocha
+# ES6 + Webpack + AVA
 
-Write your project using ES6 + Webpack + Mocha now.
+Write your project using ES6 + Webpack + AVA now.
 Just clone this repo and run `npm i`
 
 #Why?
@@ -10,12 +10,10 @@ All code will live inside `src/`. The bundle will be loaded in `src/index.html`
 
 #Why this project is cool?
 1. It uses most of eslint rules from Airbnb Javascript styleguide. https://github.com/airbnb/javascript
-2. It has Code coverage
-3. Mocha
-4. Karma
-5. Webpack
-6. Babel
-7. Commitizen for awesome commit messages
+2. AVA
+3. Webpack
+4. Babel
+5. Commitizen for awesome commit messages
 
 #NPM Scripts
 * `npm dev` dev build in `localhost:8000`
