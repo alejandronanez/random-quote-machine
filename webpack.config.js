@@ -9,6 +9,12 @@ module.exports = env => {
 			pathinfo: !env.prod
 		},
 		context: resolve(__dirname, 'src'),
+		resolve: {
+			modules: [
+				resolve(__dirname, 'src'),
+				'node_modules'
+			]
+		},
 		devtool: env.prod ? 'source-map' : 'eval',
 		bail: env.prod,
 		module: {
