@@ -19,7 +19,9 @@
     "commit": "git-cz",
     "lint": "eslint ./src/ --ext .js",
     "precommit": "npm run lint",
-    "test": "NODE_ENV=test ava \"src/**/*.test.js\"",
+    "report": "nyc report --reporter=html",
+    "report:show": "npm run report && open ./coverage/index.html",
+    "test": "NODE_ENV=test nyc ava \"src/**/*.test.js\"",
     "test:nyan": "NODE_ENV=test ava \"src/**/*.test.js\" --tap | tap-nyan",
     "watch:test": "NODE_ENV=test ava \"src/**/*.test.js\" --watch"
   },
@@ -55,11 +57,13 @@
     "cz-conventional-changelog": "~1.1.6",
     "eslint": "~2.9.0",
     "eslint-config-airbnb": "~8.0.0",
+    "eslint-loader": "^1.3.0",
     "eslint-plugin-import": "~1.6.1",
     "eslint-plugin-jsx-a11y": "~1.0.4",
     "eslint-plugin-react": "~5.0.1",
     "husky": "^0.11.4",
     "npm-run-all": "^2.1.2",
+    "nyc": "^6.6.1",
     "rimraf": "^2.5.2",
     "tap-nyan": "0.0.2",
     "webpack": "^2.1.0-beta.13",
@@ -74,7 +78,8 @@
   },
   "ava": {
     "require": [
-      "./src/helpers/test-helpers.js"
+      "babel-core/register",
+      "babel-polyfill"
     ]
   }
 }

@@ -4,3 +4,4 @@ coverage
 .npmrc
 *.log
 dist
+.nyc_output
