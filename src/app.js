@@ -1,17 +1,18 @@
 
 import 'styles/style.css';
 import { getQuotes } from 'api/api';
-
-const quoteElement = document.querySelector('.js-quote');
-const authorElement = document.querySelector('.js-author');
-const newQuoteElement = document.querySelector('.js-new-quote');
-const tweetElement = document.querySelector('.js-share');
-
-export function getTweet(message, author) {
-	return `http://twitter.com/home/?status=${message} - ${author}`;
-}
+import { getTweet } from 'helpers/helpers';
+import {
+	ERROR_TEXT,
+	ERROR_AUTHOR
+} from 'constants/constants';
 
 function getNewQuotes() {
+
+	const quoteElement = document.querySelector('.js-quote');
+	const authorElement = document.querySelector('.js-author');
+	const tweetElement = document.querySelector('.js-share');
+
 	getQuotes()
 		.then(({ data: { author, quote }, status }) => {
 			if (status === 200) {
@@ -19,17 +20,17 @@ function getNewQuotes() {
 				authorElement.textContent = `- ${author}`;
 				tweetElement.href = getTweet(quote, author);
 			} else {
-				quoteElement.textContent = 'Something went wrong =[';
-				authorElement.textContent = '';
+				quoteElement.textContent = ERROR_TEXT;
+				authorElement.textContent = ERROR_AUTHOR;
 			}
 		})
 		.catch(() => {
-			quoteElement.textContent = 'Something went wrong';
-			authorElement.textContent = '';
+			quoteElement.textContent = ERROR_TEXT;
+			authorElement.textContent = ERROR_AUTHOR;
 		});
 }
 
-getNewQuotes();
+const newQuoteElement = document.querySelector('.js-new-quote');
 
 newQuoteElement.addEventListener('click', (evt) => {
 	evt.preventDefault();
@@ -37,3 +38,6 @@ newQuoteElement.addEventListener('click', (evt) => {
 
 	getNewQuotes();
 });
+
+getNewQuotes();
+
