@@ -84,5 +84,8 @@
       "babel-core/register",
       "babel-polyfill"
     ]
+  },
+  "dependencies": {
+    "axios": "^0.12.0"
   }
 }
