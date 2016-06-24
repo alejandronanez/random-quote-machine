@@ -21,9 +21,9 @@
     "precommit": "npm run lint",
     "report": "nyc report --reporter=html",
     "report:show": "npm run report && open ./coverage/index.html",
-    "test": "NODE_ENV=test nyc ava \"src/**/*.test.js\"",
-    "test:nyan": "NODE_ENV=test ava \"src/**/*.test.js\" --tap | tap-nyan",
-    "watch:test": "NODE_ENV=test ava \"src/**/*.test.js\" --watch"
+    "test": "nyc ava \"./src/**/*.test.js\"",
+    "test:nyan": "ava \"./src/**/*.test.js\" --tap | tap-nyan",
+    "watch:test": "ava \"./src/**/*.test.js\" --watch"
   },
   "repository": {
     "type": "git",

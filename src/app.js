@@ -4,7 +4,8 @@ import { getQuotes } from 'api/api';
 import { getTweet } from 'helpers/helpers';
 import {
 	ERROR_TEXT,
-	ERROR_AUTHOR
+	ERROR_AUTHOR,
+	TWEET_URL
 } from 'constants/constants';
 
 function getNewQuotes() {
@@ -18,7 +19,7 @@ function getNewQuotes() {
 			if (status === 200) {
 				quoteElement.textContent = quote;
 				authorElement.textContent = `- ${author}`;
-				tweetElement.href = getTweet(quote, author);
+				tweetElement.href = `${TWEET_URL}${getTweet(quote, author)}`;
 			} else {
 				quoteElement.textContent = ERROR_TEXT;
 				authorElement.textContent = ERROR_AUTHOR;
